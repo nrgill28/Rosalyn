@@ -82,6 +82,7 @@ namespace Rosalyn
                 .AddSingleton<ModerationLogService>()
                 .AddSingleton<BlacklistService>()
                 .AddSingleton<PermissionsService>()
+                .AddSingleton<RoleService>()
                 .AddSingleton<CommandService>()
                 .AddSingleton<CommandHandler>()
                 .AddScoped(_ => ConfigureConfiguration())

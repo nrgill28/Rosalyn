@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Discord;
 using Rosalyn.Data;
 using Rosalyn.Data.Models;
 
@@ -82,5 +83,10 @@ namespace Rosalyn.Services
         /// <returns>The added ModerationLogEvent entity</returns>
         public async Task<ModerationLogEvent> AddKick(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
             await AddEvent(moderatorId, targetId, serverId, "kick", TimeSpan.Zero, reason);
+
+        private async Task UnmuteUser(IGuildUser user)
+        {
+            
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿{
   "token": "Bot token goes here",
-  "prefix": "^"
+  "prefix": "^",
+  "owner_id": "Your user ID here"
 }

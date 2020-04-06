@@ -14,18 +14,21 @@
           <e p="BlacklistFilter.cs" t="Include" />
           <e p="ModerationLogEvent.cs" t="Include" />
           <e p="PermissionEntry.cs" t="Include" />
+          <e p="RolePersist.cs" t="Include" />
+          <e p="SpecialRole.cs" t="Include" />
         </e>
         <e p="Strings.cs" t="Include" />
       </e>
       <e p="example_config.json" t="Include" />
       <e p="Migrations" t="Include">
-        <e p="20200406095616_InitialCreate.cs" t="Include" />
-        <e p="20200406095616_InitialCreate.Designer.cs" t="Include" />
+        <e p="20200406114417_InitialCreate.cs" t="Include" />
+        <e p="20200406114417_InitialCreate.Designer.cs" t="Include" />
         <e p="DatabaseContextModelSnapshot.cs" t="Include" />
       </e>
       <e p="Modules" t="Include">
         <e p="BlacklistModule.cs" t="Include" />
         <e p="PermissionsModule.cs" t="Include" />
+        <e p="SpecialRolesModule.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -47,6 +50,7 @@
         <e p="BlacklistService.cs" t="Include" />
         <e p="ModerationLogService.cs" t="Include" />
         <e p="PermissionsService.cs" t="Include" />
+        <e p="RoleService.cs" t="Include" />
       </e>
     </e>
   </component>

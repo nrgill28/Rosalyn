@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Discord.Commands;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Rosalyn.Data;
 using Rosalyn.Services;
@@ -23,12 +24,14 @@ namespace Rosalyn.Preconditions
         
         public override async Task<PreconditionResult> CheckPermissionsAsync(ICommandContext context, CommandInfo command, IServiceProvider services)
         {
-            DatabaseContext dbContext = services.GetRequiredService<DatabaseContext>();
+            IConfiguration config = services.GetRequiredService<IConfiguration>();
             PermissionsService permissions = services.GetRequiredService<PermissionsService>();
-
-            // If the user has the requested permission, or overall admin, return success
+            
+            
+            // If the user has the requested permission, or overall admin, or is owner of the bot, return success
             if (await permissions.UserHasPermission(context.User, context.Guild, _permissionName) ||
-                await permissions.UserHasPermission(context.User, context.Guild, "*"))
+                await permissions.UserHasPermission(context.User, context.Guild, "*") ||
+                context.User.Id == ulong.Parse(config["owner_id"]))
                 return PreconditionResult.FromSuccess();
             
             // Get a list of all parent permission namespaces

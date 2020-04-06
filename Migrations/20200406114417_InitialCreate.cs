@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Rosalyn.Migrations
@@ -12,7 +13,7 @@ namespace Rosalyn.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ServerId = table.Column<ulong>(nullable: false),
                     Content = table.Column<string>(nullable: true)
                 },
@@ -26,7 +27,7 @@ namespace Rosalyn.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Timestamp = table.Column<DateTime>(nullable: false),
                     ModeratorId = table.Column<ulong>(nullable: false),
                     TargetId = table.Column<ulong>(nullable: false),
@@ -45,7 +46,7 @@ namespace Rosalyn.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ServerId = table.Column<ulong>(nullable: false),
                     ForeignId = table.Column<ulong>(nullable: false),
                     Permission = table.Column<string>(nullable: true)
@@ -53,6 +54,21 @@ namespace Rosalyn.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Permissions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SpecialRoles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    GuildId = table.Column<ulong>(nullable: false),
+                    RoleId = table.Column<ulong>(nullable: false),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SpecialRoles", x => x.Id);
                 });
         }
 
@@ -66,6 +82,9 @@ namespace Rosalyn.Migrations
 
             migrationBuilder.DropTable(
                 name: "Permissions");
+
+            migrationBuilder.DropTable(
+                name: "SpecialRoles");
         }
     }
 }
