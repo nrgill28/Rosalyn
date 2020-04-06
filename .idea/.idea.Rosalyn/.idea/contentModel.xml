@@ -17,6 +17,7 @@
         </e>
         <e p="Strings.cs" t="Include" />
       </e>
+      <e p="example_config.json" t="Include" />
       <e p="Migrations" t="Include">
         <e p="20200406095616_InitialCreate.cs" t="Include" />
         <e p="20200406095616_InitialCreate.Designer.cs" t="Include" />
@@ -38,6 +39,7 @@
         <e p="RequireCustomPermissionAttribute.cs" t="Include" />
       </e>
       <e p="Program.cs" t="Include" />
+      <e p="README.md" t="Include" />
       <e p="Rosalyn.csproj" t="IncludeRecursive" />
       <e p="Rosalyn.db" t="Include" />
       <e p="Rosalyn.sln" t="IncludeFlat" />
