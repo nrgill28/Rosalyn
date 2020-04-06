@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\nrgil\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\nrgil\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Rosalyn.21276891.00" t="ExcludeRecursive" />
+    <e p="C:\Users\nrgil\Desktop\Rosalyn" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="CommandHandler.cs" t="Include" />
+      <e p="config.json" t="Include" />
+      <e p="Data" t="Include">
+        <e p="DatabaseContext.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="BlacklistFilter.cs" t="Include" />
+          <e p="ModerationLogEvent.cs" t="Include" />
+          <e p="PermissionEntry.cs" t="Include" />
+        </e>
+        <e p="Strings.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20200406095616_InitialCreate.cs" t="Include" />
+        <e p="20200406095616_InitialCreate.Designer.cs" t="Include" />
+        <e p="DatabaseContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Modules" t="Include">
+        <e p="BlacklistModule.cs" t="Include" />
+        <e p="PermissionsModule.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="Rosalyn.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Preconditions" t="Include">
+        <e p="RequireCustomPermissionAttribute.cs" t="Include" />
+      </e>
+      <e p="Program.cs" t="Include" />
+      <e p="Rosalyn.csproj" t="IncludeRecursive" />
+      <e p="Rosalyn.db" t="Include" />
+      <e p="Rosalyn.sln" t="IncludeFlat" />
+      <e p="Services" t="Include">
+        <e p="BlacklistService.cs" t="Include" />
+        <e p="ModerationLogService.cs" t="Include" />
+        <e p="PermissionsService.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
