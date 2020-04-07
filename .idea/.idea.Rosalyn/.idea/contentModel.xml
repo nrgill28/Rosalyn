@@ -17,7 +17,6 @@
           <e p="RolePersist.cs" t="Include" />
           <e p="SpecialRole.cs" t="Include" />
         </e>
-        <e p="Strings.cs" t="Include" />
       </e>
       <e p="example_config.json" t="Include" />
       <e p="Migrations" t="Include">

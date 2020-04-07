@@ -138,7 +138,8 @@ namespace Rosalyn.Services
         /// <param name="user">The user to get role persists from</param>
         /// <returns>The role persists</returns>
         public async Task<RolePersist[]> GetUserRolePersists(IGuild guild, IUser user)
-            => _dbContext.RolePersists.Where(x => x.GuildId == guild.Id && x.UserId == user.Id).ToArray();
+            => await Task.Run(() =>
+                _dbContext.RolePersists.Where(x => x.GuildId == guild.Id && x.UserId == user.Id).ToArray());
 
         #endregion
 

@@ -79,7 +79,8 @@ namespace Rosalyn.Services
         /// <returns>The list of filters in the server</returns>
         public async Task<BlacklistFilter[]> ListBlacklistFilters(IGuild guild)
         {
-            return _dbContext.BlacklistFilters.Where(x => x.ServerId == guild.Id).ToArray();
+            return await Task.Run(() =>
+                _dbContext.BlacklistFilters.Where(x => x.ServerId == guild.Id).ToArray());
         }
     }
 }

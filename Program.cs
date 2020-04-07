@@ -66,6 +66,7 @@ namespace Rosalyn
         {
             SocketSelfUser user = _client.CurrentUser;
             _logger.LogInformation($"Logged in as {user.Username}#{user.Discriminator}");
+            await Task.CompletedTask;
         }
 
         private async Task LogClientMessage(LogMessage message)
@@ -78,6 +79,8 @@ namespace Rosalyn
                 case LogSeverity.Info: _logger.LogInformation(message.Exception, message.Message); break;
                 default: _logger.LogDebug(message.Exception, message.Message); break;
             }
+
+            await Task.CompletedTask;
         }
         
         private ServiceProvider ConfigureServices()
@@ -98,7 +101,7 @@ namespace Rosalyn
 
         private IConfiguration ConfigureConfiguration()
         {
-            return new ConfigurationBuilder().AddJsonFile(Strings.ConfigurationLocation).Build();
+            return new ConfigurationBuilder().AddJsonFile("config.json").Build();
         }
 
         private ILogger ConfigureLogging()

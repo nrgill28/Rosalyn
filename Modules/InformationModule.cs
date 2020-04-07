@@ -125,6 +125,8 @@ namespace Rosalyn.Modules
         /// </summary>
         private async Task HelpMenu()
         {
+            // TODO: This.
+            await ReplyAsync("This has not been implemented yet.");
         }
 
         [Command("info")]
@@ -132,6 +134,7 @@ namespace Rosalyn.Modules
         public async Task Info()
         {
             // TODO: This.
+            await ReplyAsync("This has not been implemented yet.");
         }
 
         [Command("status")]
@@ -139,6 +142,7 @@ namespace Rosalyn.Modules
         public async Task Status()
         {
             // TODO: This.
+            await ReplyAsync("This has not been implemented yet.");
         }
     }
 }
