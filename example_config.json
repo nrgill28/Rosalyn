@@ -1,5 +1,12 @@
 ﻿{
   "token": "Bot token goes here",
   "prefix": "^",
-  "owner_id": "Your user ID here"
+  "owner_id": "Your user ID here",
+  "database": {
+    "source": "mysql",
+    "host": "localhost",
+    "user": "root",
+    "pass": "",
+    "schema": "Rosalyn"
+  }
 }

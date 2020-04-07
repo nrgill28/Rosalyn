@@ -48,6 +48,28 @@ namespace Rosalyn.Services
         /// <returns>The added ModerationLogEvent entity</returns>
         public async Task<ModerationLogEvent> AddWarn(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
             await AddEvent(moderatorId, targetId, serverId, "warn", TimeSpan.Zero, reason);
+        
+        /// <summary>
+        /// Adds a unmute event to the moderation log
+        /// </summary>
+        /// <param name="moderatorId">The ID of the moderator performing the unmute</param>
+        /// <param name="targetId">The ID of the user receiving the unmute</param>
+        /// <param name="serverId">The ID of the server the unmute was given in</param>
+        /// <param name="reason">The reason for the unmute</param>
+        /// <returns>The added ModerationLogEvent entity</returns>
+        public async Task<ModerationLogEvent> AddUnmute(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
+            await AddEvent(moderatorId, targetId, serverId, "unmute", TimeSpan.Zero, reason);
+        
+        /// <summary>
+        /// Adds a unban event to the moderation log
+        /// </summary>
+        /// <param name="moderatorId">The ID of the moderator performing the unban</param>
+        /// <param name="targetId">The ID of the user receiving the unban</param>
+        /// <param name="serverId">The ID of the server the unban was given in</param>
+        /// <param name="reason">The reason for the unban</param>
+        /// <returns>The added ModerationLogEvent entity</returns>
+        public async Task<ModerationLogEvent> AddUnban(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
+            await AddEvent(moderatorId, targetId, serverId, "unban", TimeSpan.Zero, reason);
 
         /// <summary>
         /// Adds a mute event to the moderation log
@@ -83,10 +105,5 @@ namespace Rosalyn.Services
         /// <returns>The added ModerationLogEvent entity</returns>
         public async Task<ModerationLogEvent> AddKick(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
             await AddEvent(moderatorId, targetId, serverId, "kick", TimeSpan.Zero, reason);
-
-        private async Task UnmuteUser(IGuildUser user)
-        {
-            
-        }
     }
 }

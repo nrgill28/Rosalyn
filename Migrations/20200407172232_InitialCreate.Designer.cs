@@ -9,7 +9,7 @@ using Rosalyn.Data;
 namespace Rosalyn.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200406114417_InitialCreate")]
+    [Migration("20200407172232_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,6 +86,32 @@ namespace Rosalyn.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Permissions");
+                });
+
+            modelBuilder.Entity("Rosalyn.Data.Models.RolePersist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan?>("Duration")
+                        .HasColumnType("time(6)");
+
+                    b.Property<ulong>("GuildId")
+                        .HasColumnType("bigint unsigned");
+
+                    b.Property<ulong>("RoleId")
+                        .HasColumnType("bigint unsigned");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<ulong>("UserId")
+                        .HasColumnType("bigint unsigned");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RolePersists");
                 });
 
             modelBuilder.Entity("Rosalyn.Data.Models.SpecialRole", b =>

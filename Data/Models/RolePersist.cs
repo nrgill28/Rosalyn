@@ -9,6 +9,8 @@ namespace Rosalyn.Data.Models
         public ulong UserId { get; set; }
         public ulong RoleId { get; set; }
         public DateTime Timestamp { get; set; }
-        public TimeSpan Duration { get; set; }
+        public TimeSpan? Duration { get; set; }
+
+        public bool Active => !Duration.HasValue || DateTime.Now > Timestamp + Duration;
     }
 }

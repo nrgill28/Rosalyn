@@ -57,6 +57,23 @@ namespace Rosalyn.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "RolePersists",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    GuildId = table.Column<ulong>(nullable: false),
+                    UserId = table.Column<ulong>(nullable: false),
+                    RoleId = table.Column<ulong>(nullable: false),
+                    Timestamp = table.Column<DateTime>(nullable: false),
+                    Duration = table.Column<TimeSpan>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RolePersists", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SpecialRoles",
                 columns: table => new
                 {
@@ -82,6 +99,9 @@ namespace Rosalyn.Migrations
 
             migrationBuilder.DropTable(
                 name: "Permissions");
+
+            migrationBuilder.DropTable(
+                name: "RolePersists");
 
             migrationBuilder.DropTable(
                 name: "SpecialRoles");
