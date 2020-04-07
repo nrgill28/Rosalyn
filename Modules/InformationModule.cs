@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Discord;
+using Discord.Addons.Interactive;
 using Discord.Commands;
 using Rosalyn.Misc;
 using Rosalyn.Preconditions;
@@ -16,7 +15,7 @@ namespace Rosalyn.Modules
 {
     [Name("Information Module")]
     [Summary("A module for all informative commands")]
-    public class InformationModule : ModuleBase<SocketCommandContext>
+    public class InformationModule : InteractiveBase
     {
         private readonly CommandService _commands;
 
@@ -125,8 +124,21 @@ namespace Rosalyn.Modules
         /// </summary>
         private async Task HelpMenu()
         {
-            // TODO: This.
-            await ReplyAsync("This has not been implemented yet.");
+            List<Embed> pages = new List<Embed>();
+
+            foreach (var module in _commands.Modules)
+            {
+                EmbedBuilder builder = new EmbedBuilder
+                {
+                    Title = module.Name,
+                    Description = String.Join('\n', module.Commands.Select(
+                        x => $"**{x.FullCommandName()}**: {x.Summary}"))
+                };
+
+                pages.Add(builder.Build());
+            }
+
+            await PagedReplyAsync(pages);
         }
 
         [Command("info")]

@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using Discord;
+using Discord.Addons.Interactive;
 using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Console;
 using Rosalyn.Data;
 using Rosalyn.Services;
 
@@ -91,6 +89,7 @@ namespace Rosalyn
                 .AddSingleton<ModerationLogService>()
                 .AddSingleton<BlacklistService>()
                 .AddSingleton<PermissionsService>()
+                .AddSingleton<InteractiveService>()
                 .AddSingleton<RoleService>()
                 .AddSingleton<CommandService>()
                 .AddSingleton<CommandHandler>()
