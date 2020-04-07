@@ -11,7 +11,7 @@ namespace Rosalyn.Services
         private DatabaseContext _dbContext;
 
         public ModerationLogService(DatabaseContext dbContext) => _dbContext = dbContext;
-        
+
         /// <summary>
         /// Adds an event to the moderation log
         /// </summary>
@@ -21,7 +21,8 @@ namespace Rosalyn.Services
         /// <param name="duration">The duration of the action (or null if infinite)</param>
         /// <param name="reason">The reason for performing the action</param>
         /// <returns>The added ModerationLogEvent entity</returns>
-        public async Task<ModerationLogEvent> AddEvent(ulong moderatorId, ulong targetId, ulong serverId, string action, TimeSpan? duration, string reason)
+        public async Task<ModerationLogEvent> AddEvent(ulong moderatorId, ulong targetId, ulong serverId, string action,
+            TimeSpan? duration, string reason)
         {
             var entry = await _dbContext.ModerationLogEvents.AddAsync(new ModerationLogEvent
             {
@@ -34,7 +35,7 @@ namespace Rosalyn.Services
                 Reason = reason
             });
             await _dbContext.SaveChangesAsync();
-            
+
             return entry.Entity;
         }
 
@@ -46,9 +47,10 @@ namespace Rosalyn.Services
         /// <param name="serverId">The ID of the server the warn was given in</param>
         /// <param name="reason">The reason for the warn</param>
         /// <returns>The added ModerationLogEvent entity</returns>
-        public async Task<ModerationLogEvent> AddWarn(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
+        public async Task<ModerationLogEvent>
+            AddWarn(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
             await AddEvent(moderatorId, targetId, serverId, "warn", TimeSpan.Zero, reason);
-        
+
         /// <summary>
         /// Adds a unmute event to the moderation log
         /// </summary>
@@ -57,9 +59,10 @@ namespace Rosalyn.Services
         /// <param name="serverId">The ID of the server the unmute was given in</param>
         /// <param name="reason">The reason for the unmute</param>
         /// <returns>The added ModerationLogEvent entity</returns>
-        public async Task<ModerationLogEvent> AddUnmute(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
+        public async Task<ModerationLogEvent> AddUnmute(ulong moderatorId, ulong targetId, ulong serverId,
+            string reason) =>
             await AddEvent(moderatorId, targetId, serverId, "unmute", TimeSpan.Zero, reason);
-        
+
         /// <summary>
         /// Adds a unban event to the moderation log
         /// </summary>
@@ -68,7 +71,8 @@ namespace Rosalyn.Services
         /// <param name="serverId">The ID of the server the unban was given in</param>
         /// <param name="reason">The reason for the unban</param>
         /// <returns>The added ModerationLogEvent entity</returns>
-        public async Task<ModerationLogEvent> AddUnban(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
+        public async Task<ModerationLogEvent>
+            AddUnban(ulong moderatorId, ulong targetId, ulong serverId, string reason) =>
             await AddEvent(moderatorId, targetId, serverId, "unban", TimeSpan.Zero, reason);
 
         /// <summary>
@@ -80,7 +84,8 @@ namespace Rosalyn.Services
         /// <param name="reason">The reason for the mute</param>
         /// <param name="duration">The duration of the mute (or null if infinite)</param>
         /// <returns>The added ModerationLogEvent entity</returns>
-        public async Task<ModerationLogEvent> AddMute(ulong moderatorId, ulong targetId, ulong serverId, string reason, TimeSpan? duration=null) =>
+        public async Task<ModerationLogEvent> AddMute(ulong moderatorId, ulong targetId, ulong serverId, string reason,
+            TimeSpan? duration = null) =>
             await AddEvent(moderatorId, targetId, serverId, "mute", duration, reason);
 
         /// <summary>
@@ -92,7 +97,8 @@ namespace Rosalyn.Services
         /// <param name="reason">The reason for the ban</param>
         /// <param name="duration">The duration of the ban (or null if infinite)</param>
         /// <returns>The added ModerationLogEvent entity</returns>
-        public async Task<ModerationLogEvent> AddBan(ulong moderatorId, ulong targetId, ulong serverId, string reason, TimeSpan? duration=null) =>
+        public async Task<ModerationLogEvent> AddBan(ulong moderatorId, ulong targetId, ulong serverId, string reason,
+            TimeSpan? duration = null) =>
             await AddEvent(moderatorId, targetId, serverId, "ban", duration, reason);
 
         /// <summary>

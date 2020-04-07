@@ -30,6 +30,7 @@
       </e>
       <e p="Modules" t="Include">
         <e p="BlacklistModule.cs" t="Include" />
+        <e p="InformationModule.cs" t="Include" />
         <e p="PermissionsModule.cs" t="Include" />
         <e p="RoleModule.cs" t="Include" />
       </e>

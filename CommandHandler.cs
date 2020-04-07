@@ -60,7 +60,5 @@ namespace Rosalyn
             // command.
             if (!result.IsSuccess) await context.Channel.SendMessageAsync(result.ErrorReason);
         }
-
-        public IEnumerable<CommandInfo> GetCommands() => _commands.Commands;
     }
 }

@@ -16,6 +16,8 @@ namespace Rosalyn.Preconditions
         /// The permission name required to run the command
         /// </summary>
         private readonly string _permissionName;
+
+        public string Permission => _permissionName;
         
         public RequireCustomPermissionAttribute(string permissionName)
         {

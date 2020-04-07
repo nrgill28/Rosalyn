@@ -1,12 +1,19 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Discord;
 using Discord.Commands;
 using Rosalyn.Data.Models;
 using Rosalyn.Preconditions;
 using Rosalyn.Services;
 
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedMember.Global
+
 namespace Rosalyn.Modules
 {
-    [Name("Blacklist Module"), Group("blacklist"), Alias("bl")]
+    [Name("Blacklist Module"), Group("blacklist")]
     [Summary("Module for managing the bot's blacklist filters")]
     [RequireCustomPermission("blacklist.manage")]
     public class BlacklistModule : ModuleBase<SocketCommandContext>
@@ -16,20 +23,37 @@ namespace Rosalyn.Modules
 
         [Command("add")]
         [Summary("Adds a regex pattern to the blacklist")]
-        public async Task Add([Summary("The regex pattern (in quotes)")] string pattern)
+        public async Task Add(
+            [Summary("The regex pattern"), Remainder]
+            string pattern)
         {
-            BlacklistFilter result = await _service.AddBlacklistFilter(pattern, Context.Guild.Id);
-            await ReplyAsync($"Added `{result.Content}` (ID: {result.Id}) to the blacklist");
+            var result = await _service.AddBlacklistFilter(pattern, Context.Guild);
+            await ReplyAsync($"Added {Format.Sanitize(result.Content)} (ID: {result.Id}) to the blacklist");
         }
 
         [Command("remove")]
         [Summary("Removes a pattern from the blacklist")]
-        public async Task Remove([Summary("The ID of the pattern to remove")] int id)
+        public async Task Remove(
+            [Summary("The ID of the pattern to remove")]
+            int id)
         {
-            BlacklistFilter result = await _service.RemoveBlacklistFilter(id, Context.Guild.Id);
+            var result = await _service.RemoveBlacklistFilter(id, Context.Guild);
             if (result != null)
-                await ReplyAsync($"Removed `{result.Content}` (ID: {result.Id})");
+                await ReplyAsync($"Removed {Format.Sanitize(result.Content)} (ID: {result.Id})");
             else await ReplyAsync($"Could not remove filter with ID {id}");
+        }
+
+        [Command("list")]
+        [Summary("Lists the patterns in the blacklist")]
+        public async Task List()
+        {
+            BlacklistFilter[] filters = await _service.ListBlacklistFilters(Context.Guild);
+            if (filters.Length == 0)
+                await ReplyAsync("There are no blacklist filters set");
+            else
+                await ReplyAsync("Filters:\n" +
+                                 String.Join('\n', filters.Select(
+                                     x => $"{x.Id}: {Format.Sanitize(x.Content)}")));
         }
     }
 }

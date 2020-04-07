@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Discord.Commands;
 
 namespace Rosalyn.Misc
 {
@@ -20,6 +21,36 @@ namespace Rosalyn.Misc
             if (timeSpan.Milliseconds >= 1d)
                 pieces.Add($"{timeSpan.Milliseconds} milliseconds");
             return String.Join(", ", pieces);
+        }
+
+        public static string FullCommandName(this CommandInfo commandInfo)
+        {
+            List<string> pieces = new List<string> {commandInfo.Name};
+            ModuleInfo parent = commandInfo.Module;
+            while (parent != null)
+            {
+                if (!String.IsNullOrEmpty(parent.Group))
+                    pieces.Add(parent.Group);
+                parent = parent.Parent;
+            }
+
+            pieces.Reverse();
+            return String.Join(" ", pieces);
+        }
+
+        public static string FullModuleName(this ModuleInfo moduleInfo)
+        {
+            List<string> pieces = new List<string> {moduleInfo.Group};
+            ModuleInfo parent = moduleInfo.Parent;
+            while (parent != null)
+            {
+                if (!String.IsNullOrEmpty(parent.Group))
+                    pieces.Add(parent.Group);
+                parent = parent.Parent;
+            }
+
+            pieces.Reverse();
+            return String.Join(" ", pieces);
         }
     }
 }

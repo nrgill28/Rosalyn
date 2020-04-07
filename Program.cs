@@ -16,6 +16,8 @@ namespace Rosalyn
 {
     class Program
     {
+        public const string ApplicationVersion = "0.0.1";
+        
         static void Main(string[] args)
         {
             Console.Title = "Rosalyn Discord Moderation Bot";
@@ -39,6 +41,10 @@ namespace Rosalyn
                 // Get the database
                 DatabaseContext dbContext = services.GetRequiredService<DatabaseContext>();
                 await dbContext.Database.EnsureCreatedAsync();
+                
+                // Get the command service
+                CommandService commandService = services.GetRequiredService<CommandService>();
+                commandService.Log += LogClientMessage;
                 
                 // Start the client
                 DiscordSocketClient client = services.GetRequiredService<DiscordSocketClient>();

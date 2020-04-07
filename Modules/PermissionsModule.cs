@@ -8,6 +8,9 @@ using Rosalyn.Data.Models;
 using Rosalyn.Preconditions;
 using Rosalyn.Services;
 
+// ReSharper disable UnusedType.Global
+// ReSharper disable UnusedMember.Global
+
 namespace Rosalyn.Modules
 {
     [Name("Permissions Module"), Group("permissions")]
@@ -20,17 +23,25 @@ namespace Rosalyn.Modules
 
         [Command("give")]
         [Summary("Gives permissions to a user")]
-        public async Task GiveUserPermissions(IUser user, [Remainder] string permissions)
+        public async Task GiveUserPermissions(
+            [Summary("The user to give permissions to")]
+            IUser user,
+            [Summary("The permissions to give"), Remainder]
+            string permissions)
         {
             string[] split = permissions.Split();
             foreach (string permission in split)
                 await _service.GiveUserPermission(user, Context.Guild, permission);
             await ReplyAsync($"Gave {split.Length} permission(s) to {user.Username}#{user.Discriminator}");
         }
-        
+
         [Command("take")]
         [Summary("Takes (revokes) permissions from a user")]
-        public async Task RevokeUserPermissions(IUser user, [Remainder] string permissions)
+        public async Task RevokeUserPermissions(
+            [Summary("The user to take permissions from")]
+            IUser user,
+            [Summary("The permissions to take"), Remainder]
+            string permissions)
         {
             string[] split = permissions.Split();
             foreach (string permission in split)
@@ -40,7 +51,9 @@ namespace Rosalyn.Modules
 
         [Command("list")]
         [Summary("Shows a list of what permissions a user has")]
-        public async Task ShowUserPermissions(IUser user)
+        public async Task ShowUserPermissions(
+            [Summary("The user to list the permissions of")]
+            IUser user)
         {
             var permissions = await _service.GetUserPermissions(user, Context.Guild);
             StringBuilder sb = new StringBuilder($"Permissions for {user.Username}#{user.Discriminator}:\n```");
