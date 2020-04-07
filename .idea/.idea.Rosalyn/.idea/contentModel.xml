@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\nrgil\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\nrgil\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Rosalyn.21276891.00" t="ExcludeRecursive" />
+    <e p="C:\Users\nrgil\Desktop\Rosalyn" t="IncludeFlat">
+      <e p="Discord.Addons.Interactive" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Callbacks" t="Include">
+          <e p="IReactionCallback.cs" t="Include" />
+        </e>
+        <e p="Criteria" t="Include">
+          <e p="Criteria.cs" t="Include" />
+          <e p="EmptyCriterion.cs" t="Include" />
+          <e p="EnsureFromChannelCriterion.cs" t="Include" />
+          <e p="EnsureFromUserCriterion.cs" t="Include" />
+          <e p="EnsureSourceChannelCriterion.cs" t="Include" />
+          <e p="EnsureSourceUserCriterion.cs" t="Include" />
+          <e p="ICriterion.cs" t="Include" />
+        </e>
+        <e p="Discord.Addons.Interactive.csproj" t="IncludeRecursive" />
+        <e p="InteractiveBase.cs" t="Include" />
+        <e p="InteractiveService.cs" t="Include" />
+        <e p="InteractiveServiceConfig.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="Discord.Addons.Interactive.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Paginator" t="Include">
+          <e p="EnsureIsIntegerCriterion.cs" t="Include" />
+          <e p="EnsureReactionFromSourceUserCriterion.cs" t="Include" />
+          <e p="PaginatedAppearanceOptions.cs" t="Include" />
+          <e p="PaginatedMessage.cs" t="Include" />
+          <e p="PaginatedMessageCallback.cs" t="Include" />
+          <e p="PaginatedMessageContent.cs" t="Include" />
+        </e>
+        <e p="Results" t="Include">
+          <e p="OkResult.cs" t="Include" />
+        </e>
+      </e>
+      <e p="DiscordBot" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CommandHandler.cs" t="Include" />
+        <e p="config.json" t="Include" />
+        <e p="Data" t="Include">
+          <e p="DatabaseContext.cs" t="Include" />
+          <e p="Models" t="Include">
+            <e p="BlacklistFilter.cs" t="Include" />
+            <e p="ModerationLogEvent.cs" t="Include" />
+            <e p="PermissionEntry.cs" t="Include" />
+            <e p="RolePersist.cs" t="Include" />
+            <e p="SpecialRole.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DiscordBot.csproj" t="IncludeRecursive" />
+        <e p="example_config.json" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20200407172232_InitialCreate.cs" t="Include" />
+          <e p="20200407172232_InitialCreate.Designer.cs" t="Include" />
+          <e p="DatabaseContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Misc" t="Include">
+          <e p="Extensions.cs" t="Include" />
+        </e>
+        <e p="Modules" t="Include">
+          <e p="BlacklistModule.cs" t="Include" />
+          <e p="InformationModule.cs" t="Include" />
+          <e p="PermissionsModule.cs" t="Include" />
+          <e p="RoleModule.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="DiscordBot.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Preconditions" t="Include">
+          <e p="RequireCustomPermissionAttribute.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="README.md" t="Include" />
+        <e p="Services" t="Include">
+          <e p="BlacklistService.cs" t="Include" />
+          <e p="ModerationLogService.cs" t="Include" />
+          <e p="PermissionsService.cs" t="Include" />
+          <e p="RoleService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Rosalyn.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

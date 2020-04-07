@@ -124,18 +124,18 @@ namespace DiscordBot.Modules
         /// </summary>
         private async Task HelpMenu()
         {
-            List<Embed> pages = new List<Embed>();
+            List<PaginatedMessageContent> pages = new List<PaginatedMessageContent>();
 
             foreach (var module in _commands.Modules)
             {
-                EmbedBuilder builder = new EmbedBuilder
+                PaginatedMessageContent content = new PaginatedMessageContent
                 {
                     Title = module.Name,
                     Description = String.Join('\n', module.Commands.Select(
                         x => $"**{x.FullCommandName()}**: {x.Summary}"))
                 };
 
-                pages.Add(builder.Build());
+                pages.Add(content);
             }
 
             await PagedReplyAsync(pages);
