@@ -17,6 +17,6 @@ namespace DiscordBot.Data.Models
         public int Tier { get; set; }
         public string Reason { get; set; }
 
-        public DateTime FinishedAt => Timestamp + Duration ?? DateTime.MaxValue;
+        public bool Active => !Duration.HasValue || DateTime.Now > Timestamp + Duration;
     }
 }

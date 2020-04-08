@@ -22,6 +22,22 @@ namespace DiscordBot.Misc
                 pieces.Add($"{timeSpan.Milliseconds} milliseconds");
             return String.Join(", ", pieces);
         }
+        
+        public static string ToShortHumanReadableString(this TimeSpan timeSpan)
+        {
+            List<string> pieces = new List<string>();
+            if (timeSpan.Days >= 1d)
+                pieces.Add($"{timeSpan.Days}d");
+            if (timeSpan.Hours >= 1d)
+                pieces.Add($"{timeSpan.Hours}h");
+            if (timeSpan.Minutes >= 1d)
+                pieces.Add($"{timeSpan.Minutes}m");
+            if (timeSpan.Seconds >= 1d)
+                pieces.Add($"{timeSpan.Seconds}s");
+            if (timeSpan.Milliseconds >= 1d)
+                pieces.Add($"{timeSpan.Milliseconds}ms");
+            return String.Join(", ", pieces);
+        }
 
         public static string FullCommandName(this CommandInfo commandInfo)
         {

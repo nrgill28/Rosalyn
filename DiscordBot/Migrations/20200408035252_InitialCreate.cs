@@ -64,9 +64,11 @@ namespace DiscordBot.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    GuildId = table.Column<ulong>(nullable: false),
                     Category = table.Column<string>(nullable: true),
                     Tier = table.Column<int>(nullable: false),
-                    Punishment = table.Column<string>(nullable: true)
+                    Type = table.Column<int>(nullable: false),
+                    Duration = table.Column<TimeSpan>(nullable: true)
                 },
                 constraints: table =>
                 {

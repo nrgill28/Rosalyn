@@ -102,10 +102,16 @@ namespace DiscordBot.Migrations
                     b.Property<string>("Category")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Punishment")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<TimeSpan?>("Duration")
+                        .HasColumnType("time(6)");
+
+                    b.Property<ulong>("GuildId")
+                        .HasColumnType("bigint unsigned");
 
                     b.Property<int>("Tier")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

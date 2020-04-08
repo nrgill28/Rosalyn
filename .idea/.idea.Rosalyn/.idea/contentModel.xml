@@ -53,14 +53,17 @@
             <e p="ModerationLogEvent.cs" t="Include" />
             <e p="ModerationPunishment.cs" t="Include" />
             <e p="PermissionEntry.cs" t="Include" />
+            <e p="Punishment.cs" t="Include" />
+            <e p="PunishmentCategory.cs" t="Include" />
             <e p="RolePersist.cs" t="Include" />
           </e>
+          <e p="PunishmentType.cs" t="Include" />
         </e>
         <e p="DiscordBot.csproj" t="IncludeRecursive" />
         <e p="example_config.json" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200408022306_InitialCreate.cs" t="Include" />
-          <e p="20200408022306_InitialCreate.Designer.cs" t="Include" />
+          <e p="20200408035252_InitialCreate.cs" t="Include" />
+          <e p="20200408035252_InitialCreate.Designer.cs" t="Include" />
           <e p="DatabaseContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Misc" t="Include">
@@ -73,6 +76,7 @@
           <e p="GuildModule.cs" t="Include" />
           <e p="InformationModule.cs" t="Include" />
           <e p="PermissionsModule.cs" t="Include" />
+          <e p="PunishmentsModule.cs" t="Include" />
           <e p="RoleModule.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -89,6 +93,7 @@
           <e p="GuildService.cs" t="Include" />
           <e p="ModerationLogService.cs" t="Include" />
           <e p="PermissionsService.cs" t="Include" />
+          <e p="PunishmentsService.cs" t="Include" />
           <e p="Results" t="Include">
             <e p="GuildSettingsGetResult.cs" t="Include" />
             <e p="GuildSettingsUpdateResult.cs" t="Include" />
