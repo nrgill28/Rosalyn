@@ -9,19 +9,19 @@ Focused entirely around moderator ease of use, this bot provides multiple functi
  - Automatic punishment tiering: Server administrators can define punishment rules according to categories and users will incrementally receive the appropriate punishment for having broken a rule in that category enough times.
 
 ## Todo
- -[ ] Moderation
-   -[x] Blacklist
-   -[ ] Warn, Ban, Kick
-   -[x] Role persist
-   -[ ] Mute (alias for muted role persist)
-   -[ ] Slowmode
- -[x] Punishment tier system
- -[ ] Informational commands
-   -[ ] Whois (user info)
-   -[ ] Info (server info)
-   -[ ] Status (bot into)
-   -[x] Help
- -[ ] Server event logging
-   -[ ] Guild setting for event log channel
- -[x] Server settings
- -[x] Permission management
+ - [ ] Moderation
+   - [x] Blacklist
+   - [ ] Warn, Ban, Kick
+   - [x] Role persist
+   - [ ] Mute (alias for muted role persist)
+   - [ ] Slowmode
+ - [x] Punishment tier system
+ - [ ] Informational commands
+   - [ ] Whois (user info)
+   - [ ] Info (server info)
+   - [ ] Status (bot into)
+   - [x] Help
+ - [ ] Server event logging
+   - [ ] Guild setting for event log channel
+ - [x] Server settings
+ - [x] Permission management
