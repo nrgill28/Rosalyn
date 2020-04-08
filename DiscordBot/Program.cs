@@ -90,6 +90,7 @@ namespace DiscordBot
                 .AddSingleton<BlacklistService>()
                 .AddSingleton<PermissionsService>()
                 .AddSingleton<InteractiveService>()
+                .AddSingleton<GuildService>()
                 .AddSingleton<RoleService>()
                 .AddSingleton<CommandService>()
                 .AddSingleton<CommandHandler>()

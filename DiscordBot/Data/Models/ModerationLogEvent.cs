@@ -13,6 +13,8 @@ namespace DiscordBot.Data.Models
         
         public string Action { get; set; }
         public TimeSpan? Duration { get; set; }
+        public string Category { get; set; }
+        public int Tier { get; set; }
         public string Reason { get; set; }
 
         public DateTime FinishedAt => Timestamp + Duration ?? DateTime.MaxValue;

@@ -20,11 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c67dccc-2491-4825-bcf0-88fa3bb58325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessageContent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Discord.Addons.Interactive/InteractiveBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Discord.Addons.Interactive/InteractiveBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessageCallback.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessageCallback.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationPunishment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/GuildService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsGetResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsUpdateResult.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/Results/ServiceResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Discord.Addons.Interactive/Discord.Addons.Interactive.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Discord.Addons.Interactive/Discord.Addons.Interactive.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Data/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Data/DatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/DiscordBot.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/DiscordBot.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/20200407172232_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/20200407172232_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Misc/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Misc/Extensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Preconditions/RequireCustomPermissionAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Misc/RequireCustomPermissionAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +52,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8E8AC665-0807-420D-AFED-C676272708A2/41/TypeDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8E8AC665-0807-420D-AFED-C676272708A2/42/TypeDescriptionProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsGetResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Data/Models/ModerationPunishment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Misc/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/DiscordBot/Preconditions/RequireCustomPermissionAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Misc/RequireCustomPermissionAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Services/RoleService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Services/PermissionsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Services/ModerationLogService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,14 +72,25 @@
     <setting file="file://$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessageContent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Migrations/DatabaseContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessageCallback.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/DiscordBot/Migrations/20200407172232_InitialCreate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Modules/RoleModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06C7DB48-B038-4001-A9C7-E163F6FEE53A/6f/6691c25e/TypeReaderValue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Modules/PermissionsModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Modules/BlacklistModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06C7DB48-B038-4001-A9C7-E163F6FEE53A/41/63fc7e3a/PreconditionAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/CommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06C7DB48-B038-4001-A9C7-E163F6FEE53A/20/bc5c5113/SummaryAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Misc/GuildSettingAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Services/GuildService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Discord.Addons.Interactive/InteractiveBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C33AFD71-6EE0-4892-B8AD-69B81D88AE1C/2E4/PropertyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Services/Results/ServiceResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsUpdateResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8E8AC665-0807-420D-AFED-C676272708A2/26/TypeConverter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06C7DB48-B038-4001-A9C7-E163F6FEE53A/bb/e2663866/CommandService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,11 +99,31 @@
         <option value="$PROJECT_DIR$/Discord.Addons.Interactive/InteractiveBase.cs" />
         <option value="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessageCallback.cs" />
         <option value="$PROJECT_DIR$/Discord.Addons.Interactive/Paginator/PaginatedMessage.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Misc/Extensions.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSetting.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Services/GuildSettingsService.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingSummary.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingSummaryAttribute.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Program.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Services/Results/ServiceResult.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsUpdateResult.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingAttribute.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsGetResult.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Services/GuildService.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationPunishment.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Data/DatabaseContext.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
   <component name="RunManager">
     <configuration name="Run Discord Bot" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/DiscordBot/bin/Debug/netcoreapp3.1/DiscordBot.dll" />
@@ -111,5 +163,25 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586303490325" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1586311958397">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1586311958397">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1586311958397">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1586311958397">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
+    <state x="461" y="170" key="SettingsEditor" timestamp="1586307172982">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586307172982" />
   </component>
 </project>

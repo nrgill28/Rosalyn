@@ -27,6 +27,8 @@ namespace DiscordBot.Data
         public DbSet<PermissionEntry> Permissions { get; set; }
         public DbSet<SpecialRole> SpecialRoles { get; set; }
         public DbSet<RolePersist> RolePersists { get; set; }
+        public DbSet<GuildSettings> GuildSettings { get; set; }
+        public DbSet<ModerationPunishment> ModerationPunishments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

@@ -23,6 +23,20 @@ namespace DiscordBot.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "GuildSettings",
+                columns: table => new
+                {
+                    GuildId = table.Column<ulong>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CommandPrefix = table.Column<string>(maxLength: 4, nullable: true),
+                    RespondOnInvalidCommand = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GuildSettings", x => x.GuildId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ModerationLogEvents",
                 columns: table => new
                 {
@@ -93,6 +107,9 @@ namespace DiscordBot.Migrations
         {
             migrationBuilder.DropTable(
                 name: "BlacklistFilters");
+
+            migrationBuilder.DropTable(
+                name: "GuildSettings");
 
             migrationBuilder.DropTable(
                 name: "ModerationLogEvents");

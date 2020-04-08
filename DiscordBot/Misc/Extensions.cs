@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Discord.Commands;
 
 namespace DiscordBot.Misc
@@ -35,6 +36,13 @@ namespace DiscordBot.Misc
 
             pieces.Reverse();
             return String.Join(" ", pieces);
+        }
+
+        public static string Usage(this CommandInfo commandInfo)
+        {
+            return commandInfo.FullCommandName() + " " +
+                string.Join(" ", commandInfo.Parameters.Select(
+                    x => x.IsOptional ? $"[{x.Name}]" : $"<{x.Name}>"));
         }
 
         public static string FullModuleName(this ModuleInfo moduleInfo)

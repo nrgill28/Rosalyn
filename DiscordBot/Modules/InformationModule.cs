@@ -25,9 +25,9 @@ namespace DiscordBot.Modules
         }
 
         [Command("help")]
-        [Summary("Shows a help menu for all commands or detailed help about a command or module")]
+        [Summary("Shows a help menu for all commands or detailed help about an item matching the target name")]
         public async Task Help(
-            [Summary("If provided, shows detailed help for a command or module matching this name"), Remainder]
+            [Summary("If provided, shows detailed help for a target matching this name"), Remainder]
             string target = null)
         {
             if (target == null) await HelpMenu();
@@ -59,9 +59,7 @@ namespace DiscordBot.Modules
             builder.AddField(field =>
             {
                 field.Name = "Usage:";
-                field.Value = command.FullCommandName() + " " +
-                              String.Join(" ", command.Parameters.Select(
-                                  x => x.IsOptional ? $"[{x.Name}]" : $"<{x.Name}>"));
+                field.Value = command.Usage();
                 field.IsInline = false;
             });
 
@@ -79,7 +77,7 @@ namespace DiscordBot.Modules
                 });
 
             // If the command has remarks, add a field for it
-            if (command.Remarks != "")
+            if (!String.IsNullOrEmpty(command.Remarks))
                 builder.AddField(field =>
                 {
                     field.Name = "Remarks:";

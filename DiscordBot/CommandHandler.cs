@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
+using DiscordBot.Services;
 using Microsoft.Extensions.Configuration;
 
 namespace DiscordBot
@@ -11,15 +12,15 @@ namespace DiscordBot
     {
         private readonly DiscordSocketClient _client;
         private readonly CommandService _commands;
-        private readonly IConfiguration _config;
         private readonly IServiceProvider _services;
+        private readonly GuildService _guildService;
 
-        public CommandHandler(IServiceProvider services, DiscordSocketClient client, CommandService commands, IConfiguration config)
+        public CommandHandler(IServiceProvider services, DiscordSocketClient client, CommandService commands, GuildService guildService)
         {
             _commands = commands;
             _client = client;
-            _config = config;
             _services = services;
+            _guildService = guildService;
         }
 
         public async Task InstallCommandsAsync()
@@ -37,8 +38,15 @@ namespace DiscordBot
             // Create a number to track where the prefix ends and the command begins
             var argPos = 0;
 
+            // Get the server's prefix or default to ^
+            string prefix;
+            if (message.Channel is SocketTextChannel textChannel)
+                prefix = (await _guildService.GetGuildSettings(textChannel.Guild)).CommandPrefix;
+            else
+                prefix = "^";
+            
             // Determine if the message is a command based on the prefix and make sure no bots trigger commands
-            if (!(message.HasStringPrefix(_config["prefix"], ref argPos) || 
+            if (!(message.HasStringPrefix(prefix, ref argPos) || 
                   message.HasMentionPrefix(_client.CurrentUser, ref argPos)) || 
                 message.Author.IsBot)
                 return;

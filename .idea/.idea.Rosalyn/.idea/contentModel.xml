@@ -49,7 +49,9 @@
           <e p="DatabaseContext.cs" t="Include" />
           <e p="Models" t="Include">
             <e p="BlacklistFilter.cs" t="Include" />
+            <e p="GuildSettings.cs" t="Include" />
             <e p="ModerationLogEvent.cs" t="Include" />
+            <e p="ModerationPunishment.cs" t="Include" />
             <e p="PermissionEntry.cs" t="Include" />
             <e p="RolePersist.cs" t="Include" />
             <e p="SpecialRole.cs" t="Include" />
@@ -58,15 +60,18 @@
         <e p="DiscordBot.csproj" t="IncludeRecursive" />
         <e p="example_config.json" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200407172232_InitialCreate.cs" t="Include" />
-          <e p="20200407172232_InitialCreate.Designer.cs" t="Include" />
+          <e p="20200408015925_InitialCreate.cs" t="Include" />
+          <e p="20200408015925_InitialCreate.Designer.cs" t="Include" />
           <e p="DatabaseContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Misc" t="Include">
           <e p="Extensions.cs" t="Include" />
+          <e p="GuildSettingAttribute.cs" t="Include" />
+          <e p="RequireCustomPermissionAttribute.cs" t="Include" />
         </e>
         <e p="Modules" t="Include">
           <e p="BlacklistModule.cs" t="Include" />
+          <e p="GuildModule.cs" t="Include" />
           <e p="InformationModule.cs" t="Include" />
           <e p="PermissionsModule.cs" t="Include" />
           <e p="RoleModule.cs" t="Include" />
@@ -78,15 +83,18 @@
             </e>
           </e>
         </e>
-        <e p="Preconditions" t="Include">
-          <e p="RequireCustomPermissionAttribute.cs" t="Include" />
-        </e>
         <e p="Program.cs" t="Include" />
         <e p="README.md" t="Include" />
         <e p="Services" t="Include">
           <e p="BlacklistService.cs" t="Include" />
+          <e p="GuildService.cs" t="Include" />
           <e p="ModerationLogService.cs" t="Include" />
           <e p="PermissionsService.cs" t="Include" />
+          <e p="Results" t="Include">
+            <e p="GuildSettingsGetResult.cs" t="Include" />
+            <e p="GuildSettingsUpdateResult.cs" t="Include" />
+            <e p="ServiceResult.cs" t="Include" />
+          </e>
           <e p="RoleService.cs" t="Include" />
         </e>
       </e>
