@@ -54,14 +54,13 @@
             <e p="ModerationPunishment.cs" t="Include" />
             <e p="PermissionEntry.cs" t="Include" />
             <e p="RolePersist.cs" t="Include" />
-            <e p="SpecialRole.cs" t="Include" />
           </e>
         </e>
         <e p="DiscordBot.csproj" t="IncludeRecursive" />
         <e p="example_config.json" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200408015925_InitialCreate.cs" t="Include" />
-          <e p="20200408015925_InitialCreate.Designer.cs" t="Include" />
+          <e p="20200408022306_InitialCreate.cs" t="Include" />
+          <e p="20200408022306_InitialCreate.Designer.cs" t="Include" />
           <e p="DatabaseContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Misc" t="Include">

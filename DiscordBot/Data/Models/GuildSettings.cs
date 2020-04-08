@@ -16,6 +16,9 @@ namespace DiscordBot.Data.Models
         [GuildSetting("Sets whether or not the bot will respond to messages with the command prefix but the command is invalid")]
         public bool RespondOnInvalidCommand { get; set; }
 
+        [GuildSetting("Sets the server's muted role ID")]
+        public ulong? MutedRoleId { get; set; }
+        
         public static GuildSettings Defaults => new GuildSettings
         {
             CommandPrefix = "^",

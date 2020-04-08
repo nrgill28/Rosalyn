@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DiscordBot.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20200408015925_InitialCreate")]
+    [Migration("20200408022306_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,9 @@ namespace DiscordBot.Migrations
                         .HasColumnType("varchar(4) CHARACTER SET utf8mb4")
                         .HasMaxLength(4);
 
+                    b.Property<ulong?>("MutedRoleId")
+                        .HasColumnType("bigint unsigned");
+
                     b.Property<bool>("RespondOnInvalidCommand")
                         .HasColumnType("tinyint(1)");
 
@@ -63,6 +66,9 @@ namespace DiscordBot.Migrations
                     b.Property<string>("Action")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<TimeSpan?>("Duration")
                         .HasColumnType("time(6)");
 
@@ -78,12 +84,35 @@ namespace DiscordBot.Migrations
                     b.Property<ulong>("TargetId")
                         .HasColumnType("bigint unsigned");
 
+                    b.Property<int>("Tier")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
                     b.ToTable("ModerationLogEvents");
+                });
+
+            modelBuilder.Entity("DiscordBot.Data.Models.ModerationPunishment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Punishment")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Tier")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ModerationPunishments");
                 });
 
             modelBuilder.Entity("DiscordBot.Data.Models.PermissionEntry", b =>
@@ -130,26 +159,6 @@ namespace DiscordBot.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RolePersists");
-                });
-
-            modelBuilder.Entity("DiscordBot.Data.Models.SpecialRole", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<ulong>("GuildId")
-                        .HasColumnType("bigint unsigned");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<ulong>("RoleId")
-                        .HasColumnType("bigint unsigned");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SpecialRoles");
                 });
 #pragma warning restore 612, 618
         }

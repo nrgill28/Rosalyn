@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Discord;
@@ -20,46 +21,10 @@ namespace DiscordBot.Services
             _discord = discord;
             _discord.UserJoined += OnUserJoin;
             _discord.Ready += OnReady;
+            _discord.GuildMemberUpdated += OnMemberUpdated;
         }
 
         #region Public Service Methods
-
-        /// <summary>
-        /// Sets a server's special role to the provided role
-        /// </summary>
-        /// <param name="guild">The guild to operate in</param>
-        /// <param name="role">The role to become special</param>
-        /// <param name="type">The type of special role</param>
-        /// <returns>The newly inserted SpecialRole entity</returns>
-        public async Task<SpecialRole> SetSpecialRole(IGuild guild, IRole role, string type)
-        {
-            SpecialRole entry = await _dbContext.SpecialRoles.FirstOrDefaultAsync(x
-                => x.GuildId == guild.Id && x.Name == type);
-            if (entry == null)
-            {
-                var result = await _dbContext.AddAsync(new SpecialRole
-                    {GuildId = guild.Id, RoleId = role.Id, Name = type});
-                entry = result.Entity;
-            }
-            else
-            {
-                entry.RoleId = role.Id;
-                _dbContext.SpecialRoles.Update(entry);
-            }
-
-            await _dbContext.SaveChangesAsync();
-            return entry;
-        }
-
-        /// <summary>
-        /// Gets a server's special role from the provided type
-        /// </summary>
-        /// <param name="guild">The guild to get the role from</param>
-        /// <param name="type">The type of role to get</param>
-        /// <returns>The SpecialRole entity from the database</returns>
-        public async Task<SpecialRole> GetSpecialRole(IGuild guild, string type)
-            => await _dbContext.SpecialRoles.FirstOrDefaultAsync(x => x.GuildId == guild.Id && x.Name == type);
-
         /// <summary>
         /// Creates a new RolePersist entity in the database
         /// </summary>
@@ -216,6 +181,19 @@ namespace DiscordBot.Services
                 .Select(x => user.Guild.GetRole(x.RoleId)));
         }
 
+        private async Task OnMemberUpdated(SocketGuildUser before, SocketGuildUser after)
+        {
+            // Find if any roles were removed
+            IEnumerable<SocketRole> removedRoles = before.Roles.Except(after.Roles);
+            
+            // Find if any removed roles are active persists
+            IEnumerable<SocketRole> activePersists = removedRoles.Intersect((await GetUserRolePersists(before.Guild, before))
+                .Select(x => before.Guild.GetRole(x.RoleId)));
+            
+            // Add them back
+            await after.AddRolesAsync(activePersists);
+        }
+        
         #endregion
     }
 }

@@ -29,7 +29,8 @@ namespace DiscordBot.Migrations
                     GuildId = table.Column<ulong>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     CommandPrefix = table.Column<string>(maxLength: 4, nullable: true),
-                    RespondOnInvalidCommand = table.Column<bool>(nullable: false)
+                    RespondOnInvalidCommand = table.Column<bool>(nullable: false),
+                    MutedRoleId = table.Column<ulong>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -48,11 +49,28 @@ namespace DiscordBot.Migrations
                     ServerId = table.Column<ulong>(nullable: false),
                     Action = table.Column<string>(nullable: true),
                     Duration = table.Column<TimeSpan>(nullable: true),
+                    Category = table.Column<string>(nullable: true),
+                    Tier = table.Column<int>(nullable: false),
                     Reason = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ModerationLogEvents", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ModerationPunishments",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Category = table.Column<string>(nullable: true),
+                    Tier = table.Column<int>(nullable: false),
+                    Punishment = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ModerationPunishments", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -86,21 +104,6 @@ namespace DiscordBot.Migrations
                 {
                     table.PrimaryKey("PK_RolePersists", x => x.Id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "SpecialRoles",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    GuildId = table.Column<ulong>(nullable: false),
-                    RoleId = table.Column<ulong>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SpecialRoles", x => x.Id);
-                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -115,13 +118,13 @@ namespace DiscordBot.Migrations
                 name: "ModerationLogEvents");
 
             migrationBuilder.DropTable(
+                name: "ModerationPunishments");
+
+            migrationBuilder.DropTable(
                 name: "Permissions");
 
             migrationBuilder.DropTable(
                 name: "RolePersists");
-
-            migrationBuilder.DropTable(
-                name: "SpecialRoles");
         }
     }
 }

@@ -73,7 +73,7 @@ namespace DiscordBot.Modules
             if (!value.Success)
                 await ReplyAsync(value.Message);
             else
-                await ReplyAsync($"{Format.Sanitize(settingName)}: {value.Result}");
+                await ReplyAsync($"{Format.Sanitize(settingName)}: {value.Result ?? "null"}");
         }
     }
 }

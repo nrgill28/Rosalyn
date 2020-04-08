@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
+using DiscordBot.Data.Models;
 using DiscordBot.Services;
 using Microsoft.Extensions.Configuration;
 
@@ -39,14 +40,14 @@ namespace DiscordBot
             var argPos = 0;
 
             // Get the server's prefix or default to ^
-            string prefix;
+            GuildSettings settings = null;
             if (message.Channel is SocketTextChannel textChannel)
-                prefix = (await _guildService.GetGuildSettings(textChannel.Guild)).CommandPrefix;
+                settings = await _guildService.GetGuildSettings(textChannel.Guild);
             else
-                prefix = "^";
+                settings = GuildSettings.Defaults;
             
             // Determine if the message is a command based on the prefix and make sure no bots trigger commands
-            if (!(message.HasStringPrefix(prefix, ref argPos) || 
+            if (!(message.HasStringPrefix(settings.CommandPrefix, ref argPos) || 
                   message.HasMentionPrefix(_client.CurrentUser, ref argPos)) || 
                 message.Author.IsBot)
                 return;
@@ -65,7 +66,11 @@ namespace DiscordBot
             // to be executed; however, this may not always be desired,
             // as it may clog up the request queue should a user spam a
             // command.
-            if (!result.IsSuccess) await context.Channel.SendMessageAsync(result.ErrorReason);
+            if (!result.IsSuccess)
+            {
+                if (result.ErrorReason != "Unknown command." || settings.RespondOnInvalidCommand)
+                    await context.Channel.SendMessageAsync(result.ErrorReason);
+            }
         }
     }
 }

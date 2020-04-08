@@ -25,7 +25,6 @@ namespace DiscordBot.Data
         public DbSet<ModerationLogEvent> ModerationLogEvents { get; set; }
         public DbSet<BlacklistFilter> BlacklistFilters { get; set; }
         public DbSet<PermissionEntry> Permissions { get; set; }
-        public DbSet<SpecialRole> SpecialRoles { get; set; }
         public DbSet<RolePersist> RolePersists { get; set; }
         public DbSet<GuildSettings> GuildSettings { get; set; }
         public DbSet<ModerationPunishment> ModerationPunishments { get; set; }

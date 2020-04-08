@@ -25,6 +25,8 @@ namespace DiscordBot.Preconditions
         
         public override async Task<PreconditionResult> CheckPermissionsAsync(ICommandContext context, CommandInfo command, IServiceProvider services)
         {
+            if (context.Guild== null) return PreconditionResult.FromError("This command cannot be ran outside a guild.");
+            
             IConfiguration config = services.GetRequiredService<IConfiguration>();
             PermissionsService permissions = services.GetRequiredService<PermissionsService>();
             

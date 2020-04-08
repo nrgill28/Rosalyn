@@ -20,28 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c67dccc-2491-4825-bcf0-88fa3bb58325" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationPunishment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/GuildService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsGetResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsUpdateResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiscordBot/Services/Results/ServiceResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rosalyn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Discord.Addons.Interactive/Discord.Addons.Interactive.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Discord.Addons.Interactive/Discord.Addons.Interactive.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiscordBot/Data/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Data/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/DiscordBot.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/DiscordBot.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/20200407172232_InitialCreate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/20200407172232_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Data/Models/SpecialRole.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/20200408015925_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/20200408015925_InitialCreate.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DiscordBot/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Misc/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Misc/Extensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Preconditions/RequireCustomPermissionAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Misc/RequireCustomPermissionAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiscordBot/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Misc/RequireCustomPermissionAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Misc/RequireCustomPermissionAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Modules/RoleModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Modules/RoleModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscordBot/Services/RoleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DiscordBot/Services/RoleService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +54,6 @@
     <setting file="file://$PROJECT_DIR$/DiscordBot/Services/PermissionsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Services/ModerationLogService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Services/BlacklistService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/DiscordBot/Data/Models/SpecialRole.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Data/Models/RolePersist.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Data/Models/PermissionEntry.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -106,17 +96,22 @@
         <option value="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingSummaryAttribute.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Program.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Modules/InformationModule.cs" />
-        <option value="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Services/Results/ServiceResult.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsUpdateResult.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Misc/GuildSettingAttribute.cs" />
-        <option value="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Services/Results/GuildSettingsGetResult.cs" />
-        <option value="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Services/GuildService.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationLogEvent.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Data/Models/ModerationPunishment.cs" />
         <option value="$PROJECT_DIR$/DiscordBot/Data/DatabaseContext.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Data/Models/GuildSettings.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/CommandHandler.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Modules/PermissionsModule.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Modules/BlacklistModule.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Modules/GuildModule.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Modules/RoleModule.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Misc/RequireCustomPermissionAttribute.cs" />
+        <option value="$PROJECT_DIR$/DiscordBot/Services/RoleService.cs" />
       </list>
     </option>
   </component>
@@ -163,25 +158,33 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586303490325" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1586311958397">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1586313164235">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1586311958397">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586313164235" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1586313164235">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1586311958397">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586313164235" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1586313164235">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1586311958397">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586313164235" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1586313164235">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586311958397" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586313164235" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1586307172982">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586307172982" />
+    <state x="990" y="252" width="678" height="798" key="find.popup" timestamp="1586313158563">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="990" y="252" width="678" height="798" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586313158563" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1586313130545">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1586313130545" />
   </component>
 </project>

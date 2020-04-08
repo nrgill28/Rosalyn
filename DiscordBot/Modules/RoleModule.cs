@@ -19,17 +19,6 @@ namespace DiscordBot.Modules
         private readonly RoleService _roleService;
         public RoleModule(RoleService service) => _roleService = service;
 
-        [Command("set")]
-        [Summary("Sets a role to become a special role")]
-        [RequireCustomPermission("manage.roles")]
-        public async Task SetSpecialRole(
-            [Summary("The type of role")] string type,
-            [Summary("The role")] IRole role)
-        {
-            await _roleService.SetSpecialRole(Context.Guild, role, type);
-            await ReplyAsync($"This server's {Format.Sanitize(type)} role has been set to {role.Name}");
-        }
-
         [Command("persist")]
         [Summary("Creates or removes a role persist on a user")]
         [Remarks("This command will overwrite an already existent role persist in the database unless no " +
